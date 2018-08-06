@@ -1,8 +1,9 @@
-const form  = document.createElement('form');
-const input = document.createElement('input');
-const div   = document.createElement('div');
-const img   = document.createElement('img'); 
-const p     = document.createElement('p'); 
+const wrapper = document.createElement('wrapper');
+const form    = document.createElement('form');
+const input   = document.createElement('input');
+const div     = document.createElement('div');
+const img     = document.createElement('img'); 
+const p       = document.createElement('p'); 
 
 const imgNum = 5;
 const falls = ['Angel','Kaieteur', 'Sutherland', 'Victoria', 'Yosemite'];
@@ -21,9 +22,18 @@ for(let i = 0; i < imgNum; i++){
     newInput.setAttribute('type', 'radio');
     newInput.setAttribute('name', 'falls');
     newInput.setAttribute('value', falls[i]); 
+    if(!i){
+       newInput.setAttribute('checked', true);  
+    }
     newP.textContent = falls[i];
     newP.insertBefore(newInput, newP.firstChild); 
     form.appendChild(newP);    
 }
+
+wrapper.appendChild(div);
+wrapper.appendChild(form);
+
+document.body.appendChild(wrapper);
+
 
 
