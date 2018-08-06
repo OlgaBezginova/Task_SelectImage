@@ -13,6 +13,7 @@ wrapper {
 img {   
     justify-content: center;
     margin-bottom: 30px;
+    display: none;
 }
 
 input {
@@ -21,6 +22,10 @@ input {
 }
 
 p {
+    display: block;
+}
+
+.active {
     display: block;
 }
 

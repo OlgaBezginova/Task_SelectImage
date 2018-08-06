@@ -23,7 +23,8 @@ for(let i = 0; i < imgNum; i++){
     newInput.setAttribute('name', 'falls');
     newInput.setAttribute('value', falls[i]); 
     if(!i){
-       newInput.setAttribute('checked', true);  
+        newInput.setAttribute('checked', true);  
+        newImg.classList.add('active');
     }
     newP.textContent = falls[i];
     newP.insertBefore(newInput, newP.firstChild); 
@@ -32,8 +33,40 @@ for(let i = 0; i < imgNum; i++){
 
 wrapper.appendChild(div);
 wrapper.appendChild(form);
-
 document.body.appendChild(wrapper);
+
+const imgs = document.querySelectorAll('img');
+
+function clearActive(){
+    for(let i = 0; i < imgNum; i++){
+        imgs[i].classList.remove('active');
+    }
+}
+
+form.addEventListener('change', function(event) {
+    if (!event || !event.target || event.target.tagName !== 'INPUT') {
+        return;
+    }
+    
+    clearActive();
+    
+    const selectedItem = event.target.getAttribute('value');
+    for(let i = 0; i < imgNum; i++){
+        if(imgs[i].dataset.name === selectedItem){
+            imgs[i].classList.add('active');
+        }
+    }    
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
