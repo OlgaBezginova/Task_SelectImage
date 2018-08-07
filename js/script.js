@@ -57,16 +57,3 @@ form.addEventListener('change', function(event) {
         }
     }    
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
